@@ -12,30 +12,33 @@ public class Training2 {
 	}
 	public static void main(String[] args) {
 		System.out.println("\n題目1");
-//		請設計一隻Java程式，計算1～1000的偶數和 (2+4+6+8+…+1000)
+//		1.請設計一隻Java程式，計算1～1000的偶數和 (2+4+6+8+…+1000)
 		int total = 0;
 		for(int i=2;i<=1000;i+=2) {
 			total += i;
-			System.out.print(total+" ");
 			}
+		System.out.print(total+" ");	
+		
 		System.out.println("\n\n題目2");
-//		請設計一隻Java程式，計算1～10的連乘積 (1*2*3*…*10) (用for迴圈)	
+//		2.請設計一隻Java程式，計算1～10的連乘積 (1*2*3*…*10) (用for迴圈)	
 		int total1 = 1;
 		for(int j=1;j<=10;j++) {
-			total1 *= j;
-			System.out.print(total1+" ");
+			total1 *= j;			
 			}
+		System.out.print(total1+" ");
+		
 		System.out.println("\n\n題目3");
-//		請設計一隻Java程式，計算1～10的連乘積 (1*2*3*…*10) (用while迴圈)
+//		3.請設計一隻Java程式，計算1～10的連乘積 (1*2*3*…*10) (用while迴圈)
 		int x = 1;
 		int total2 = 1;
 		while(x<=10) {
-			total2*=x;
-			System.out.print(total2+" ");
+			total2*=x;			
 			x++;
 		}
+		System.out.print(total2+" ");
+		
 		System.out.println("\n\n題目4");
-//		請設計一隻Java程式，輸出結果為以下：
+//		4.請設計一隻Java程式，輸出結果為以下：
 //		1 4 9 16 25 36 49 64 81 100
 		int total3 = 1;
 		for(int y=1;y<=10;y++) {
