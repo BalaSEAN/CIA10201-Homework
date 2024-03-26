@@ -3,8 +3,9 @@ package hw1;
 public class Training2 {
 	
 	public static boolean badNum(int num) {
-            int digit = num % 10;
-            if (digit == 4) {
+            int remain = num % 10;
+            int dnum = num / 4;
+            if (remain == 4 || dnum >=10) {
                 return true;
             }       
 		return false;
@@ -45,7 +46,7 @@ public class Training2 {
 //		阿文很熱衷大樂透 (1 ～ 49)，但他不喜歡有4的數字，不論是個位數或是十位數。
 //		請設計一隻程式，輸出結果為阿文可以選擇的數字有哪些？總共有幾個？
 		
-		for(int i = 1;i<=39;i++) {
+		for(int i = 1;i<=49;i++) {
 			if(badNum(i)) {
 				continue;
 			}
