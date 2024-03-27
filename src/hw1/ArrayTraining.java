@@ -1,6 +1,6 @@
 package hw1;
 
-public class Homework3 {
+public class ArrayTraining {
 //	請分別建立x, y, z三個3x3的int陣列，然後把x和y陣列的加總存放到z陣列裡，
 //	再將結果顯示於螢幕上
 //	x和y陣列中的數字：
@@ -14,7 +14,7 @@ public class Homework3 {
 //	step 5.將三個陣列的元素各別顯示出來
 	
 	public static void main(String[] args) {
-		Homework3 testArray = new Homework3();	//實作類別後才能使用此類別中的方法
+		ArrayTraining testArray = new ArrayTraining();	//實作類別後才能使用此類別中的方法
 		
 		int x[][]= testArray.getrandomArray();
 		int y[][]= testArray.getrandomArray();			
