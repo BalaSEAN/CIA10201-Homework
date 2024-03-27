@@ -1,6 +1,6 @@
 package hw1;
 
-public class Training3 {
+public class Homework3 {
 //	請分別建立x, y, z三個3x3的int陣列，然後把x和y陣列的加總存放到z陣列裡，
 //	再將結果顯示於螢幕上
 //	x和y陣列中的數字：
@@ -14,7 +14,7 @@ public class Training3 {
 //	step 5.將三個陣列的元素各別顯示出來
 	
 	public static void main(String[] args) {
-		Training3 testArray = new Training3();
+		Homework3 testArray = new Homework3();	//實作類別後才能使用此類別中的方法
 		
 		int x[][]= testArray.getrandomArray();
 		int y[][]= testArray.getrandomArray();			
@@ -29,8 +29,8 @@ public class Training3 {
 		testArray.printArray(y);
 		testArray.printArray(z);
 	}
-	public int[][] getrandomArray(){	//產生亂數元素陣列的方法
-		int data[][]= new int[3][3];
+	public int[][] getrandomArray(){	//產生有亂數元素陣列的方法
+		int data[][]= new int[3][3];	//陣列new後才能存放值
 		for(int i=0;i<data.length;i++) {
 			for(int j=0;j<data[i].length;j++) {
 				data[i][j]+=(int)(Math.random()*31);
@@ -38,7 +38,7 @@ public class Training3 {
 		}
 		return data;
 	}
-	public void printArray(int z[][]) {
+	public void printArray(int z[][]) {	//印出陣列的方法
 		for(int i=0;i<z.length;i++) {
 			for(int j=0;j<z[i].length;j++) {
 				System.out.print(z[i][j]+"\t");

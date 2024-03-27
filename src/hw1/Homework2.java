@@ -1,6 +1,6 @@
 package hw1;
 
-public class Training2 {
+public class Homework2 {
 	
 	public static boolean badNum(int num) {
             int remain = num % 10;
