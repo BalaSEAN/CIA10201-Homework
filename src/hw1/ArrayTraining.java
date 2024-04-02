@@ -14,7 +14,7 @@ public class ArrayTraining {
 //	step 5.將三個陣列的元素各別顯示出來
 	
 	public static void main(String[] args) {
-		ArrayTraining testArray = new ArrayTraining();	//實作類別後才能使用此類別中的方法
+		ArrayTraining testArray = new ArrayTraining();	//類別建立實體後才能使用此類別中的方法
 		
 		int x[][]= testArray.getrandomArray();
 		int y[][]= testArray.getrandomArray();			
