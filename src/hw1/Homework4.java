@@ -3,22 +3,21 @@ import java.util.Scanner;
 public class Homework4 {
 	public static int totalDayOfYear(int y, int m, int d) {	//計算該年第幾天的方法
 		int dayOfMonth[]= {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-		if((y%4==0 && y%100 != 0) || (y%400 == 0)){	//若是閏年2月改為29天
+		if((y%4==0 && y%100 != 0) || (y%400 == 0)){	//若是閏年時2月改為29天
 			dayOfMonth[1]=29;
+		}	
+		if(d>dayOfMonth[m-1]) {			
+			System.out.println("日期不該超過 "+dayOfMonth[m-1] +"天");
+			return -1;	//超過合理天數時回傳-1
 		}
-		int dayOfYear = 0;
-		if(d<=dayOfMonth[m-1]) {
-			for(int i=0;i<(m-1);i++) {
-				dayOfYear += dayOfMonth[i];
-			}
-			dayOfYear+=d;
-			System.out.println("輸入的日期為該年的第 "+dayOfYear+"天");
-		}		
-		else {
-			System.out.println("日期不該超過 "+dayOfMonth[m-1] +"天");				
+		int dayOfYear = 0;					
+		for(int i=0;i<(m-1);i++) {
+			dayOfYear += dayOfMonth[i];
 		}
+		dayOfYear+=d;		
 		return dayOfYear;
 	}
+	
 	public static int count(String []array) {	//計算出八大行星母音的方法		
 		int sum =0;
 		for(int i=0;i<array.length;i++) {	//每個字串母音數量的總和
@@ -69,28 +68,26 @@ public class Homework4 {
 		System.out.println(count(planets));
 	
 //		請設計一個程式,可以讓小華輸入欲借的金額後,便會顯示哪些員工編號的同事有錢可借他;
-//		並且統計有錢可借的總人數:例如輸入 1000 就顯示「有錢可借的員工編號: 25 19 27 共 3 人!」
-//		int emp[][]= {{25, 32,8,19,27},{2500, 800, 500, 1000, 1200}};
-//		Scanner borrowMoney = new Scanner(System.in);
-//		
-//		System.out.println("輸入想借的金額");
-//		int money = borrowMoney.nextInt();
-//		int empno[] = new int[5];
-//		int num =0;		
-//		for(int i = 0; i < emp[0].length; i++) {    
-//		    if(money <= emp[1][i]) {
-//		    	empno[num]= emp[0][i]; // 找到符合條件的員工編號
-//		        num++; // 增加符合條件的員工數量
-//		    }
-//		}
-//		System.out.print("有錢可借的員工編號:");
-//		for(int i = 0; i < num; i++) {	//取出員工編號
-//	        System.out.print(empno[i] + " ");
-//	    }
-//		System.out.println("共 "+num+" 人");
+//		並且統計有錢可借的總人數:例如輸入 1000 就顯示「有錢可借的員工編號: 25 19 27 共 3 人!」		
+		int emp[][]= {{25, 32,8,19,27},{2500, 800, 500, 1000, 1200}};
+		Scanner borrowMoney = new Scanner(System.in);	
+		System.out.println("輸入想借的金額");
+		int money = borrowMoney.nextInt();
+		int empno[] = new int[5];
+		int num =0;		
+		for(int i = 0; i < emp[0].length; i++) {    
+		    if(money <= emp[1][i]) {
+		    	empno[num]= emp[0][i]; // 找到符合條件的員工編號
+		        num++; // 增加符合條件的員工數量
+		    }
+		}
+		System.out.print("有錢可借的員工編號:");
+		for(int i = 0; i < num; i++) {	//取出員工編號
+	        System.out.print(empno[i] + " ");
+	    }
+		System.out.println("共 "+num+" 人");
 		
-		//請設計由鍵盤輸入三個整數，分別代表西元yyyy年，mm月，dd日，執行後會顯示是該年的第幾天
-		
+		//請設計由鍵盤輸入三個整數，分別代表西元yyyy年，mm月，dd日，執行後會顯示是該年的第幾天		
 		Scanner year = new Scanner(System.in);
 		Scanner month = new Scanner(System.in);
 		Scanner day = new Scanner(System.in);
@@ -100,7 +97,10 @@ public class Homework4 {
 		int d = day.nextInt();
 			
 		int totalDay = totalDayOfYear(y, m, d);
-		 		 	
+		if(totalDay != -1) {
+			System.out.println("輸入的日期為該年的第 "+totalDay+"天");
+		} 
+		
 		//班上有8位同學，他們進行了6次考試結果如下：請算出每位同學考最高分的次數
 			int [][] score= {{10, 37,100, 77, 98, 90},
 							 {35, 75, 70, 95, 70, 80},
