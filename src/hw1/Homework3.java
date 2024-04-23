@@ -75,7 +75,7 @@ public class Homework3 {
 		System.out.println("阿文...請輸入你討厭1~9哪個數字");
 		int sum = lottoNum.nextInt();		
 		int total = 0;
-		 Set<Integer> finalNum = new HashSet<>();
+		 Set<Integer> finalNum = new HashSet<Integer>();
 		
 		for(int i =1;i<=49;i++) {
 			int num1 = i/10;	
@@ -88,7 +88,7 @@ public class Homework3 {
 		}
 		System.out.println("\n總共有"+total+"個數字可選");
 //		進階挑戰：輸入不要的數字後，直接亂數印出6個號碼且不得重複			
-        Set<Integer> lottery = new HashSet<>();
+        Set<Integer> lottery = new HashSet<Integer>();
         while (lottery.size() < 6) {
             int randomNum = (int)(Math.random()*49+1);
             if (finalNum.contains(randomNum)) {
