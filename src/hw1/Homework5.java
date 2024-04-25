@@ -1,7 +1,5 @@
 package hw1;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Homework5 {	
@@ -51,6 +49,22 @@ public class Homework5 {
 		return maxSum;
 	}
 	
+	//5.
+	public static void genAuthCode() {
+		int authCode[] = new int[8];
+		int c;
+		for(int i= 0; i< authCode.length; i++) {			
+			while(true) {
+				c = (int)(Math.random()*75)+48;
+				if(47<c&&c<58||(64<c&&c<91) || (96<c&&c<123)) {
+					authCode[i]=c;
+					System.out.print((char)authCode[i]);
+					break;
+				}
+			}			
+		}
+	}
+	
 	public static void main(String[] args) {
 //		1.請設計一個方法為starSquare(int width, int height)，
 //		當使用者鍵盤輸入寬與高時，即會印出對應的*長方形		
@@ -78,6 +92,14 @@ public class Homework5 {
 		Homework5 w = new Homework5();
 		System.out.println(w.maxElement(intArray));
 		System.out.println(w.maxElement(doubleArray));
+		
+//		4.結果於類別MyRectangle、MyRectangle
+		
+//		5.身為程式設計師的你,收到一個任務,要幫系統的註冊新增驗證碼的功能,請設計一個方法
+//		genAuthCode(),當呼叫此方法時,會回傳一個8位數的驗證碼,此驗證碼內容包含了英文大小寫
+//		與數字的亂數組合
+		System.out.print("本次隨機驗證碼為:");
+		genAuthCode();
 		
 	}
 	
